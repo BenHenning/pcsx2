@@ -1299,7 +1299,7 @@ void GSTextureCache::Target::Update()
 	if (t == NULL) return;
 
 	// No handling please
-	if ((m_type == DepthStencil)) {
+	if ((m_type == DepthStencil) && !m_depth_supported) {
 		// do the most likely thing a direct write would do, clear it
 		GL_INS("ERROR: Update DepthStencil dummy");
 
